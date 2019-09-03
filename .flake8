@@ -1,0 +1,3 @@
+[flake8]
+extend-ignore = */migrations/* E501
+max-line-length = 110

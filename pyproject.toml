@@ -1,0 +1,11 @@
+[tool.black]
+line-length = 88
+skip-string-normalization = "true"  # temporary workaround for boolean values breaking toml parser
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''
+target_version = ['py36']
