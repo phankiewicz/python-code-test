@@ -12,6 +12,9 @@ class Starship(models.Model):
     crew = models.IntegerField()
     passengers = models.IntegerField()
 
+    def __str__(self):
+        return self.starship_class
+
 
 class Listing(models.Model):
     name = models.CharField(max_length=255)

@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Starship
+
+
+@admin.register(Starship)
+class StarshipAdmin(admin.ModelAdmin):
+    pass
