@@ -20,3 +20,4 @@ class Listing(models.Model):
     name = models.CharField(max_length=255)
     ship_type = models.ForeignKey(Starship, related_name='listings')
     price = models.IntegerField()
+    active = models.BooleanField(default=True)
