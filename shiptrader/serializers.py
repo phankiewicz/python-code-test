@@ -1,6 +1,12 @@
 from rest_framework.serializers import ModelSerializer
 
-from .models import Starship
+from .models import Listing, Starship
+
+
+class ListingSerializer(ModelSerializer):
+    class Meta:
+        model = Listing
+        fields = ('name', 'ship_type', 'price', 'active')
 
 
 class StarshipSerializer(ModelSerializer):
