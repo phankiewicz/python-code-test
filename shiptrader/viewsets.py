@@ -1,4 +1,5 @@
-from rest_framework import mixins, viewsets
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, mixins, viewsets
 
 from .filters import ListingFilter
 from .models import Listing, Starship
@@ -15,6 +16,8 @@ class ListingViewSet(
     serializer_class = ListingSerializer
     queryset = Listing.objects.all()
     filterset_class = ListingFilter
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    ordering_fields = ('price', 'created')
 
 
 class StarshipViewSet(viewsets.ReadOnlyModelViewSet):
