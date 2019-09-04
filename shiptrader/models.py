@@ -21,3 +21,4 @@ class Listing(models.Model):
     ship_type = models.ForeignKey(Starship, related_name='listings')
     price = models.IntegerField()
     active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)

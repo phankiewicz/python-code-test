@@ -6,7 +6,7 @@ from .models import Listing, Starship
 class ListingSerializer(ModelSerializer):
     class Meta:
         model = Listing
-        fields = ('name', 'ship_type', 'price', 'active')
+        fields = ('name', 'ship_type', 'price', 'active', 'created')
 
 
 class StarshipSerializer(ModelSerializer):
