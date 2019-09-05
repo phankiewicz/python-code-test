@@ -6,13 +6,14 @@ from .models import Listing, Starship
 class ListingSerializer(ModelSerializer):
     class Meta:
         model = Listing
-        fields = ('name', 'ship_type', 'price', 'active', 'created')
+        fields = ('id', 'name', 'ship_type', 'price', 'active', 'created')
 
 
 class StarshipSerializer(ModelSerializer):
     class Meta:
         model = Starship
         fields = (
+            'id',
             'starship_class',
             'manufacturer',
             'length',
