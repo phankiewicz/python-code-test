@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django_filters",
     "rest_framework",
     "shiptrader",
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,6 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 STARSHIPS_API_URL = 'https://swapi.co/api/starships'
+
+
+REST_FRAMEWORK = {'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'}

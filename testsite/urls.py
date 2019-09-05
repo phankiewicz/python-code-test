@@ -13,10 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from rest_framework_swagger.views import get_swagger_view
+
 from django.conf.urls import include, url
 from django.contrib import admin
 
 import shiptrader.urls
+
+schema_view = get_swagger_view(title='Shiptrader API')
 
 apps_urls = [shiptrader.urls]
 
@@ -27,4 +31,5 @@ pattern = [url(r'', include(app_url)) for app_url in apps_urls]
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(pattern, namespace='api')),
+    url(r'^api/', schema_view),
 ]
