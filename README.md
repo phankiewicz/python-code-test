@@ -57,3 +57,17 @@ require.
 * A seller can deactivate and reactivate their listing
 
 After you are done, create a release branch in your repo and send us the link.
+
+
+## Notes
+
+* To make proper listing list view, user binding content should be introduce.
+    In this approach we could list only those listings that are active from other users
+    and all created by the user himself. For purposes of this short assignment it was
+    left out.
+* To active and deactivate changes should be made by PUT/PATCH methods in regards to
+    `active` field in Listing model.
+* No constraints regarding uniqueness of starships were created as its not clear
+    what the uniqueness would be based on.
+* No contraints regarding uniquness of active listings per starships were created as
+    that would be closely tied to users.
